@@ -1,0 +1,25 @@
+{
+  "name": "react-native-animated-header",
+  "version": "1.0.0",
+  "description": "Collapsing toolbar for Android and iOS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maphongba008/react-native-animated-header.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "animated",
+    "header"
+  ],
+  "author": "maphongba008",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maphongba008/react-native-animated-header/issues"
+  },
+  "homepage": "https://github.com/maphongba008/react-native-animated-header#readme"
+}
