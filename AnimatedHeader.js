@@ -19,7 +19,7 @@ export default class AnimatedHeader extends React.PureComponent {
       console.error('Invalid child, only 1 child accepted')
     }
     const component = arr[0].type.displayName;
-    if (component !== 'ScrollView' && component !== 'FlatList') {
+    if (component !== 'ScrollView' && component !== 'FlatList' && component !== 'Content') {
       console.error('AnimatedHeader only accept ScrollView or FlatList as a child');
     }
     const {headerMaxHeight} = this.props;
