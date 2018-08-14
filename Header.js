@@ -105,11 +105,12 @@ export default class Header extends React.PureComponent {
     const opacity = this._getOpacity();
     const fontSize = this._getFontSize();
     const imageOpacity = this._getImageOpacity();
-
+    const headerStyle = this.props.noBorder ? undefined : { borderBottomWidth: 1, borderColor: '#a7a6ab'}
     return (
         <Animated.View
           style={[
             styles.header,
+            headerStyle,
             {
               height: height,
               backgroundColor: toolbarColor,

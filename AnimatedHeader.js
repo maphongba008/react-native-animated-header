@@ -18,17 +18,13 @@ export default class AnimatedHeader extends React.PureComponent {
     if (arr.length > 1) {
       console.error('Invalid child, only 1 child accepted')
     }
-    const component = arr[0].type.displayName;
-    if (component !== 'ScrollView' && component !== 'FlatList' && component !== 'Content') {
-      console.error('AnimatedHeader only accept ScrollView or FlatList as a child');
-    }
-    const {headerMaxHeight} = this.props;
+    const { headerMaxHeight } = this.props;
     const child = React.cloneElement(arr[0], {
       style: {flex: 1},
       ref: (r) => this.scrollView = r,
       scrollEventThrottle: 16,
       onScroll: this._onScroll,
-      contentContainerStyle: {paddingTop: headerMaxHeight}
+      contentContainerStyle: { paddingTop: headerMaxHeight || 200 }
     });
     return (
       <View style={this.props.style}>

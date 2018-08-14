@@ -1,6 +1,6 @@
 {
   "name": "react-native-animated-header",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Collapsing toolbar for Android and iOS",
   "main": "index.js",
   "scripts": {

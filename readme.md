@@ -85,6 +85,7 @@ titleStyle | Style of title, use `left` and `bottom` for positioning the text | 
 toolbarColor | Toolbar background color | String | Yes | `#FFF`
 headerMaxHeight | Height of header when expanded | Number | Yes | `200`
 disabled | Do not allow header to collapse | Boolean | Yes | `false`
+noBorder | Hide header separator | Boolean | Yes | `false`
 imageSource | Image background for header | Image | Yes | `undefined`
 
 ## Warning
