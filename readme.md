@@ -13,11 +13,12 @@ yarn add react-native-animated-header
 
 ## Demo
 
-Android
+Android<br>
 ![Android](https://raw.githubusercontent.com/maphongba008/react-native-animated-header/master/demo/android-gif.gif)
-iOS
+<br>
+iOS<br>
 ![iOS](https://raw.githubusercontent.com/maphongba008/react-native-animated-header/master/demo/ios-gif.gif)
-iPhone X
+iPhone X<br>
 ![iPhoneX](https://raw.githubusercontent.com/maphongba008/react-native-animated-header/master/demo/ipx.gif)
 
 ## Usage
@@ -80,7 +81,8 @@ backText  | Back text, leave it empty to hide |   String | Yes | `undefined`
 title    | Header title  |   String | Yes | `undefined`
 renderLeft | To render icon on the left | Function | Yes | `undefined`
 renderRight | To render icon on the right | Function | Yes | `undefined`
-backStyle | Style of back text | Object | Yes | { fontSize: 16, marginLeft: 15 }
+backStyle | Style of back container | Object | Yes | { marginLeft: 15 }
+backTextStyle | Style of back text | Object | Yes | { fontSize: 16 }
 titleStyle | Style of title, use `left` and `bottom` for positioning the text | Object | Yes | { fontSize: 20, left: 40, bottom: 30 }
 toolbarColor | Toolbar background color | String | Yes | `#FFF`
 headerMaxHeight | Height of header when expanded | Number | Yes | `200`

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated, Platform, StyleSheet, View, Image, Dimensions } from 'react-native';
+import { Animated, Platform, StyleSheet, View, TouchableOpacity, Dimensions } from 'react-native';
 
 const ios = Platform.OS === 'ios';
 const {width, height} = Dimensions.get('window');
@@ -40,7 +40,7 @@ export default class Header extends React.PureComponent {
 
   _getFontSize = () => {
     const { scrollOffset } = this.state;
-    const backFontSize = this.props.backStyle.fontSize;
+    const backFontSize = this.props.backTextStyle.fontSize;
     const titleFontSize = this.props.titleStyle.fontSize;
     return scrollOffset.interpolate({
       inputRange: [0, this.headerHeight - toolbarHeight],
@@ -98,7 +98,7 @@ export default class Header extends React.PureComponent {
   }
 
   render() {
-    const { imageSource, toolbarColor, titleStyle } = this.props;
+    const { imageSource, toolbarColor, titleStyle, onBackPress, backStyle, backTextStyle } = this.props;
     const height = this._getHeight();
     const left = this._getLeft();
     const bottom = this._getBottom();
@@ -106,6 +106,7 @@ export default class Header extends React.PureComponent {
     const fontSize = this._getFontSize();
     const imageOpacity = this._getImageOpacity();
     const headerStyle = this.props.noBorder ? undefined : { borderBottomWidth: 1, borderColor: '#a7a6ab'}
+
     return (
         <Animated.View
           style={[
@@ -125,7 +126,10 @@ export default class Header extends React.PureComponent {
             <View style={styles.statusBar} />
             <View style={styles.toolbar}>
               {this.props.renderLeft && this.props.renderLeft()}
-              <Animated.Text onLayout={this.onBackLayout} style={[this.props.backStyle, { flex: 1, opacity: opacity }]}>{this.props.backText || 'Back'}</Animated.Text>
+              <TouchableOpacity disabled={!onBackPress} onPress={onBackPress} activeOpacity={0.8} style={[styles.titleButton, backStyle]} onLayout={this.onBackLayout}>
+                <Animated.Text style={[backTextStyle, { alignSelf: 'center', opacity: opacity }]}>{this.props.backText || 'Back2'}</Animated.Text>
+              </TouchableOpacity>
+              <View style={styles.flexView} />
               {this.props.renderRight && this.props.renderRight()}
             </View>
           </View>
@@ -160,6 +164,12 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
   },
+  titleButton: {
+    flexDirection: 'row',
+  },
+  flexView: {
+    flex: 1,
+  },
 });
 
 
@@ -168,7 +178,8 @@ Header.defaultProps = {
   title: '',
   renderLeft: undefined,
   renderRight: undefined,
-  backStyle: { fontSize: 16, marginLeft: 15 },
+  backStyle: { marginLeft: 15 },
+  backTextStyle: { fontSize: 16 },
   titleStyle: { fontSize: 20, left: 40, bottom: 30 },
   toolbarColor: '#FFF',
   headerMaxHeight: 200,
