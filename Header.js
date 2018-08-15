@@ -178,7 +178,7 @@ Header.defaultProps = {
   title: '',
   renderLeft: undefined,
   renderRight: undefined,
-  backStyle: { marginLeft: 15 },
+  backStyle: { marginLeft: 10 },
   backTextStyle: { fontSize: 16 },
   titleStyle: { fontSize: 20, left: 40, bottom: 30 },
   toolbarColor: '#FFF',

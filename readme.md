@@ -56,7 +56,8 @@ export default class App extends Component {
         title='Happy coding'
         renderLeft={() => (<Icon name='arrow-back' style={{ marginLeft: 20 }} />)}
         renderRight={() => (<Icon name='add' style={{ marginRight: 20 }} />)}
-        backStyle={{ fontSize: 14, marginLeft: 10, color: '#000' }}
+        backStyle={{ marginLeft: 10 }}
+        backTextStyle={{fontSize: 14, color: '#000'}}
         titleStyle={{ fontSize: 22, left: 20, bottom: 20, color: '#000' }}
         headerMaxHeight={200}
         imageSource={Bg}
@@ -81,7 +82,7 @@ backText  | Back text, leave it empty to hide |   String | Yes | `undefined`
 title    | Header title  |   String | Yes | `undefined`
 renderLeft | To render icon on the left | Function | Yes | `undefined`
 renderRight | To render icon on the right | Function | Yes | `undefined`
-backStyle | Style of back container | Object | Yes | { marginLeft: 15 }
+backStyle | Style of back container | Object | Yes | { marginLeft: 10 }
 backTextStyle | Style of back text | Object | Yes | { fontSize: 16 }
 titleStyle | Style of title, use `left` and `bottom` for positioning the text | Object | Yes | { fontSize: 20, left: 40, bottom: 30 }
 toolbarColor | Toolbar background color | String | Yes | `#FFF`
