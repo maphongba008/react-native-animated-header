@@ -1,4 +1,8 @@
 
+[![Version](https://img.shields.io/npm/v/react-native-animated-header.svg)](https://www.npmjs.com/package/react-native-animated-header)
+[![NPM](https://img.shields.io/npm/dm/react-native-animated-header.svg)](https://www.npmjs.com/package/react-native-animated-header)
+
+
 # react-native-animated-form
 
 Collapsing toolbar for Android and iOS
