@@ -19,7 +19,7 @@ Android<br>
 iOS<br>
 ![iOS](https://raw.githubusercontent.com/maphongba008/react-native-animated-header/master/demo/ios-gif.gif)
 iPhone X<br>
-![iPhoneX](https://raw.githubusercontent.com/maphongba008/react-native-animated-header/master/demo/ipx.gif)
+![iPhoneX]<br>(https://raw.githubusercontent.com/maphongba008/react-native-animated-header/master/demo/ipx.gif)
 
 ## Usage
 

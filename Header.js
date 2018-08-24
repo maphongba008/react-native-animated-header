@@ -40,8 +40,8 @@ export default class Header extends React.PureComponent {
 
   _getFontSize = () => {
     const { scrollOffset } = this.state;
-    const backFontSize = this.props.backTextStyle.fontSize;
-    const titleFontSize = this.props.titleStyle.fontSize;
+    const backFontSize = this.props.backTextStyle.fontSize || Header.defaultProps.backTextStyle.fontSize;
+    const titleFontSize = this.props.titleStyle.fontSize || Header.defaultProps.titleStyle.fontSize;
     return scrollOffset.interpolate({
       inputRange: [0, this.headerHeight - toolbarHeight],
       outputRange: [titleFontSize, backFontSize],
@@ -80,7 +80,6 @@ export default class Header extends React.PureComponent {
 
   _getOpacity = () => {
     const { scrollOffset } = this.state;
-    console.log('back: ', this.props.backText)
     return this.props.backText ? scrollOffset.interpolate({
       inputRange: [0, this.headerHeight - toolbarHeight],
       outputRange: [1, 0],
