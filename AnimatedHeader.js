@@ -4,7 +4,24 @@ import {
 } from 'react-native';
 import Header from './Header';
 
-export default class AnimatedHeader extends React.PureComponent {
+type Props = {
+  style?: any;
+  backText?: string;
+  title?: string;
+  renderLeft?: () => React.Component;
+  renderRight?: () => React.Component;
+  backStyle?: any;
+  backTextStyle?: any;
+  titleStyle?: any;
+  toolbarColor?: string;
+  headerMaxHeight?: number;
+  disabled?: boolean;
+  noBorder?: boolean;
+  parallax?: boolean;
+  imageSource?: any;
+};
+
+export default class AnimatedHeader extends React.PureComponent<Props> {
   
   _onScroll = (e) => {
     this.header.onScroll(e);

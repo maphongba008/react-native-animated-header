@@ -96,6 +96,26 @@ export default class Header extends React.PureComponent {
     }) : 0
   }
 
+  _getImageScaleStyle = () => {
+    if (!this.props.parallax) {
+      return undefined;
+    }
+    const { scrollOffset } = this.state;
+    const scale = scrollOffset.interpolate({
+      inputRange: [-100, -0],
+      outputRange: [1.5, 1],
+      extrapolate: 'clamp',
+    })
+
+    return {
+      transform: [
+        {
+          scale,
+        }
+      ]
+    }
+  }
+
   render() {
     const { imageSource, toolbarColor, titleStyle, onBackPress, backStyle, backTextStyle } = this.props;
     const height = this._getHeight();
@@ -117,7 +137,7 @@ export default class Header extends React.PureComponent {
             },
           ]}>
           {imageSource && <Animated.Image 
-            style={[StyleSheet.absoluteFill, {width: null, height: null, opacity: imageOpacity}]}
+            style={[StyleSheet.absoluteFill, {width: null, height: null, opacity: imageOpacity}, this._getImageScaleStyle()]}
             source={imageSource}
             resizeMode='cover'
           />}

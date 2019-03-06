@@ -94,6 +94,8 @@ headerMaxHeight | Height of header when expanded | Number | Yes | `200`
 disabled | Do not allow header to collapse | Boolean | Yes | `false`
 noBorder | Hide header separator | Boolean | Yes | `false`
 imageSource | Image background for header | Image | Yes | `undefined`
+parallax | Use parallax effect | Boolean | Yes | `false`
+
 
 ## Warning
 
