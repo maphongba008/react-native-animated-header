@@ -38,14 +38,14 @@ export default class AnimatedHeader extends React.PureComponent<Props> {
     const { headerMaxHeight } = this.props;
     const { style, ref, scrollEventThrottle, onScroll, contentContainerStyle, ...rest } = arr[0].props;
     const child = React.cloneElement(arr[0], {
-      style: {flex: 1, ...style},
+      style: { ...style, flex: 1, },
       ref: (r) => this.scrollView = r,
       scrollEventThrottle: 16,
       onScroll: this._onScroll,
-      contentContainerStyle: { paddingTop: headerMaxHeight || 200, ...contentContainerStyle },
+      contentContainerStyle: { ...contentContainerStyle, paddingTop: headerMaxHeight || 200,  },
       ...rest
     });
-    
+
     return (
       <View style={this.props.style}>
         {child}
